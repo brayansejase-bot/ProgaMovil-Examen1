@@ -1,12 +1,12 @@
 package org.ucb.appp1.di
 
 import org.koin.dsl.module
-//import org.ucb.appp1.userinformation.data.datasource.GithubRemoteDataSource
-//import org.ucb.appp1.userinformation.data.repository.GithubRepositoryImpl
-//import org.ucb.appp1.userinformation.data.service.GitHubApiService
-//import org.ucb.appp1.userinformation.domain.repository.GithubRepository
+import org.ucb.appp1.Cryptomonedas.data.datasource.CryptoRemoteDataSource
+import org.ucb.appp1.Cryptomonedas.data.repository.CryptoRepositoryImpl
+import org.ucb.appp1.Cryptomonedas.data.service.CryptoApiService
+import org.ucb.appp1.Cryptomonedas.domain.repository.CryptoRepository
 
 val dataModule = module {
-   // single<GithubRemoteDataSource> { GitHubApiService() }
-   // single<GithubRepository>{GithubRepositoryImpl(get())}
+    single<CryptoRemoteDataSource> { CryptoApiService() }
+    single<CryptoRepository> { CryptoRepositoryImpl(get()) }
 }
